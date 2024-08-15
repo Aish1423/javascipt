@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        height: 100px;
+        width: 100px;
+
+    }
+</style>
+<body>
+    <input id="num-input" type="number" />
+    <button id="submit-btn">create</button>
+    <div id="result-container"></div>
+
+<script>
+  const numInput = document.getElementById('num-input');
+  const submitBtn = document.getElementById('submit-btn');
+  const resultContainer = document.getElementById('result-container');
+
+  submitBtn.addEventListener('click', () => {
+    const num = parseInt(numInput.value);
+    resultContainer.innerHTML = '';
+
+    for (let i = 0; i <=num; i++) {
+      const div = document.createElement('div');
+      div.style.width = '100px';
+      div.style.height = '100px';
+      div.style.display = 'inline-block';
+      div.style.margin = '5px';
+
+      if (i % 2 === 0) {
+        // number is even
+        div.style.backgroundColor = 'red';
+      } else {
+        // number is odd
+        div.style.backgroundColor = 'yellow';
+      }
+
+      resultContainer.appendChild(div);
+    }
+  });
+</script>
+</body>
+</html>
